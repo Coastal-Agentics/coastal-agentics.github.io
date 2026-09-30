@@ -48,12 +48,12 @@ a:focus-visible { outline: 2px solid var(--a); outline-offset: 3px; border-radiu
   text-transform: uppercase; color: var(--overlap); font-weight: 600;
 }
 h1 {
-  margin: 0; max-width: 18ch;
+  margin: 0; max-width: 21ch;
   font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.08;
   letter-spacing: -0.02em; font-weight: 700;
 }
 .lede { max-width: 38rem; margin: 1.75rem 0 0; font-size: 1.2rem; color: var(--ink-soft); }
-.cta { margin-top: 2.5rem; }
+.cta { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
 
 .button {
   display: inline-block; padding: 0.7rem 1.25rem; border-radius: 999px;
@@ -80,6 +80,12 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
   list-style: none; margin: 0; padding: 0;
   display: grid; gap: 1.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 }
+.pillars {
+  list-style: none; margin: 2.5rem 0 0; padding: 0;
+  display: grid; gap: 1.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+.pillars li { padding-top: 1rem; border-top: 2px solid var(--a); color: var(--ink-soft); }
+.pillars strong { display: block; color: var(--ink); margin-bottom: 0.25rem; }
 .beliefs li { padding-left: 1rem; border-left: 2px solid var(--line); color: var(--ink-soft); }
 .beliefs strong { display: block; color: var(--ink); }
 
@@ -109,6 +115,7 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
 .soon { font-weight: 400; color: var(--ink-soft); }
 .links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin: 1.5rem 0 0 !important; }
 .text-link { font-weight: 600; font-size: 0.95rem; }
+.section > .eyebrow { margin-bottom: 0.75rem; }
 
 /* Footer */
 .site-footer { margin-top: 3rem; border-top: 1px solid var(--line); background: var(--bg-deep); }
