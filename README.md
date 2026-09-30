@@ -1,6 +1,6 @@
 # coastal-agentics.github.io
 
-The public website for **Coastal Agentics**, a Savannah, Georgia company that researches how communities learn together, and safe, decentralized intelligence.
+The public website for **Coastal Agentics**, a Savannah, Georgia company that trains robots on the Georgia coast, alongside the people and industries that will work with them.
 
 Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of the `main` branch.
 
@@ -8,7 +8,7 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The whole site: hero, what we do, what we believe, Saltmarsh (research tool), projects (field experiments), footer |
+| `index.html` | The whole site: hero, what we do, what we believe, Saltmarsh (research tool), projects (field experiments), work with us, footer |
 | `style.css` | All styles. System fonts, no framework |
 | `logo.svg` | The mark: a solid C and a triangular A that overlap, with a hairline wave knocked out of both |
 | `logo-wordmark.svg` | The mark plus "Coastal Agentics" |

@@ -38,7 +38,7 @@ a:focus-visible { outline: 2px solid var(--a); outline-offset: 3px; border-radiu
 }
 .brand img { width: 206px; height: 40px; }
 .site-header nav { display: flex; gap: 1.5rem; font-size: 0.95rem; }
-.site-header nav a { text-decoration: none; color: var(--ink-soft); }
+.site-header nav a { text-decoration: none; color: var(--ink-soft); white-space: nowrap; }
 .site-header nav a:hover { color: var(--ink); }
 
 /* Hero */
@@ -126,6 +126,6 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
 @media (max-width: 480px) {
   body { font-size: 1rem; }
   .brand img { width: 165px; height: 32px; }
-  .site-header nav { gap: 1rem; }
+  .site-header nav { gap: 0.35rem 1rem; flex-wrap: wrap; font-size: 0.9rem; }
   .card { padding: 1.5rem; }
 }
