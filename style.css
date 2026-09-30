@@ -1,0 +1,122 @@
+/* Coastal Agentics — no build step, no framework, no trackers. */
+:root {
+  --ink: #1E3D36;        /* deep marsh green */
+  --ink-soft: #4A5F59;
+  --sand: #F5F0E6;       /* background */
+  --sand-deep: #EAE2D2;
+  --accent: #C8793A;     /* marsh-grass ochre */
+  --accent-ink: #9C5520; /* accent dark enough for text on sand */
+  --line: #D9CFBC;
+  --radius: 14px;
+  --max: 68rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--sand);
+  color: var(--ink);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent-ink); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.wrap { width: min(100% - 3rem, var(--max)); margin-inline: auto; }
+
+/* Header */
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap;
+  padding-block: 1.75rem;
+}
+.brand img { width: 225px; height: 40px; }
+.site-header nav { display: flex; gap: 1.5rem; font-size: 0.95rem; }
+.site-header nav a { text-decoration: none; color: var(--ink-soft); }
+.site-header nav a:hover { color: var(--ink); }
+
+/* Hero */
+.hero { padding-block: clamp(4rem, 12vw, 9rem) clamp(3rem, 8vw, 6rem); }
+.eyebrow {
+  margin: 0 0 1.25rem; font-size: 0.8rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent-ink); font-weight: 600;
+}
+h1 {
+  margin: 0; max-width: 18ch;
+  font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.08;
+  letter-spacing: -0.02em; font-weight: 700;
+}
+.lede { max-width: 38rem; margin: 1.75rem 0 0; font-size: 1.2rem; color: var(--ink-soft); }
+.cta { margin-top: 2.5rem; }
+
+.button {
+  display: inline-block; padding: 0.7rem 1.25rem; border-radius: 999px;
+  background: var(--ink); color: var(--sand); text-decoration: none;
+  font-weight: 600; font-size: 0.95rem;
+}
+.button:hover { background: #142b26; color: var(--sand); }
+
+/* Sections */
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
+h2 {
+  margin: 0 0 2rem; font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  letter-spacing: -0.01em; line-height: 1.2;
+}
+h2::before {
+  content: ""; display: block; width: 2.5rem; height: 4px; margin-bottom: 1.25rem;
+  border-radius: 2px; background: var(--accent);
+}
+h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
+.prose { max-width: 40rem; }
+.prose p { margin: 0 0 1.25rem; }
+
+.beliefs {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1.5rem 3rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+.beliefs li { padding-left: 1rem; border-left: 2px solid var(--line); color: var(--ink-soft); }
+.beliefs strong { display: block; color: var(--ink); }
+
+.stack {
+  list-style: none; margin: 2.5rem 0 0; padding: 0;
+  display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+.stack li {
+  padding: 1rem 1.25rem; background: var(--sand-deep); border-radius: var(--radius);
+  color: var(--ink-soft); font-size: 0.95rem;
+}
+.stack span { color: var(--ink); font-weight: 600; }
+
+/* Projects */
+.cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
+.card {
+  padding: 2rem; border: 1px solid var(--line); border-radius: var(--radius);
+  background: #FBF8F2;
+}
+.card h3 { margin: 0 0 0.75rem; font-size: 1.35rem; }
+.card p { margin: 0 0 1rem; color: var(--ink-soft); }
+.card-tag {
+  font-size: 0.75rem !important; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 600; color: var(--accent-ink) !important; margin-bottom: 0.5rem !important;
+}
+.card-next { background: transparent; border-style: dashed; }
+.soon { font-weight: 400; color: var(--ink-soft); }
+.links { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin: 1.5rem 0 0 !important; }
+.text-link { font-weight: 600; font-size: 0.95rem; }
+
+/* Footer */
+.site-footer { margin-top: 3rem; border-top: 1px solid var(--line); background: var(--sand-deep); }
+.footer-inner { padding-block: 3rem; display: grid; gap: 1rem; justify-items: start; font-size: 0.95rem; }
+.footer-inner p { margin: 0; }
+.gh { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+
+@media (max-width: 480px) {
+  body { font-size: 1rem; }
+  .brand img { width: 180px; height: 32px; }
+  .site-header nav { gap: 1rem; }
+  .card { padding: 1.5rem; }
+}
