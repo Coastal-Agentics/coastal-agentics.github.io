@@ -10,9 +10,10 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 | --- | --- |
 | `index.html` | The whole site: hero, what we do and believe, Saltmarsh, projects, footer |
 | `style.css` | All styles. System fonts, no framework |
-| `logo.svg` | The mark: a C wrapped around an A whose crossbar is a wave |
+| `logo.svg` | The mark: a solid C and a triangular A that overlap, with a hairline wave knocked out of both |
 | `logo-wordmark.svg` | The mark plus "Coastal Agentics" |
-| `favicon.svg` | The mark on a sand tile, for browser tabs |
+| `favicon.svg` | The mark without the wave, cropped for 16 to 32px browser tabs |
+| `og-image.png` | 1200x630 social preview card |
 | `404.html` | Not-found page. Self-contained (inline CSS and SVG) because Pages serves it at any missing path |
 | `.nojekyll` | Tells Pages to serve the files as-is |
 | `CARD.md` | Provenance card |
@@ -21,7 +22,8 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 
 - No build step, no framework, no trackers, no external requests except outbound links.
 - Relative links throughout, so the site also works from a subpath or a local folder. The one exception is the home link on `404.html`, which points to `/`.
-- Palette: deep marsh green `#1E3D36`, sand `#F5F0E6`, one ochre accent `#C8793A`.
+- Palette (tonal grey-blue, from the logo): C `#436A95`, A `#5F88B7`, overlap `#34557B`, background `#EEF2F6`, text `#1F3147`.
+- Social meta tags (`og:*`, `twitter:*`) use absolute URLs, because crawlers require them.
 
 ## Local preview
 

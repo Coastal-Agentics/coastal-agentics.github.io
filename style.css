@@ -1,12 +1,14 @@
-/* Coastal Agentics — no build step, no framework, no trackers. */
+/* Coastal Agentics: no build step, no framework, no trackers. */
 :root {
-  --ink: #1E3D36;        /* deep marsh green */
-  --ink-soft: #4A5F59;
-  --sand: #F5F0E6;       /* background */
-  --sand-deep: #EAE2D2;
-  --accent: #C8793A;     /* marsh-grass ochre */
-  --accent-ink: #9C5520; /* accent dark enough for text on sand */
-  --line: #D9CFBC;
+  --ink: #1F3147;        /* deep blue-grey text */
+  --ink-soft: #4F6277;
+  --bg: #EEF2F6;         /* light grey-blue background */
+  --bg-deep: #E2E8EF;
+  --surface: #F7F9FB;
+  --c: #436A95;          /* logo C: harbor steel */
+  --a: #5F88B7;          /* logo A: lighter steel */
+  --overlap: #34557B;    /* logo overlap: darkest tone, also accent text */
+  --line: #D3DCE6;
   --radius: 14px;
   --max: 68rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -15,16 +17,16 @@
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--sand);
+  background: var(--bg);
   color: var(--ink);
   font-size: 1.0625rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 img { display: block; max-width: 100%; height: auto; }
-a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
-a:hover { color: var(--accent-ink); }
-a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+a { color: var(--ink); text-decoration-color: var(--a); text-underline-offset: 3px; }
+a:hover { color: var(--overlap); }
+a:focus-visible { outline: 2px solid var(--a); outline-offset: 3px; border-radius: 4px; }
 
 .wrap { width: min(100% - 3rem, var(--max)); margin-inline: auto; }
 
@@ -34,7 +36,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
   gap: 1rem; flex-wrap: wrap;
   padding-block: 1.75rem;
 }
-.brand img { width: 225px; height: 40px; }
+.brand img { width: 206px; height: 40px; }
 .site-header nav { display: flex; gap: 1.5rem; font-size: 0.95rem; }
 .site-header nav a { text-decoration: none; color: var(--ink-soft); }
 .site-header nav a:hover { color: var(--ink); }
@@ -43,7 +45,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-
 .hero { padding-block: clamp(4rem, 12vw, 9rem) clamp(3rem, 8vw, 6rem); }
 .eyebrow {
   margin: 0 0 1.25rem; font-size: 0.8rem; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent-ink); font-weight: 600;
+  text-transform: uppercase; color: var(--overlap); font-weight: 600;
 }
 h1 {
   margin: 0; max-width: 18ch;
@@ -55,10 +57,10 @@ h1 {
 
 .button {
   display: inline-block; padding: 0.7rem 1.25rem; border-radius: 999px;
-  background: var(--ink); color: var(--sand); text-decoration: none;
+  background: var(--c); color: #fff; text-decoration: none;
   font-weight: 600; font-size: 0.95rem;
 }
-.button:hover { background: #142b26; color: var(--sand); }
+.button:hover { background: var(--overlap); color: #fff; }
 
 /* Sections */
 .section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--line); }
@@ -68,7 +70,7 @@ h2 {
 }
 h2::before {
   content: ""; display: block; width: 2.5rem; height: 4px; margin-bottom: 1.25rem;
-  border-radius: 2px; background: var(--accent);
+  border-radius: 2px; background: var(--a);
 }
 h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
 .prose { max-width: 40rem; }
@@ -86,7 +88,7 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
   display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
 }
 .stack li {
-  padding: 1rem 1.25rem; background: var(--sand-deep); border-radius: var(--radius);
+  padding: 1rem 1.25rem; background: var(--bg-deep); border-radius: var(--radius);
   color: var(--ink-soft); font-size: 0.95rem;
 }
 .stack span { color: var(--ink); font-weight: 600; }
@@ -95,13 +97,13 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
 .cards { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); }
 .card {
   padding: 2rem; border: 1px solid var(--line); border-radius: var(--radius);
-  background: #FBF8F2;
+  background: var(--surface);
 }
 .card h3 { margin: 0 0 0.75rem; font-size: 1.35rem; }
 .card p { margin: 0 0 1rem; color: var(--ink-soft); }
 .card-tag {
   font-size: 0.75rem !important; letter-spacing: 0.14em; text-transform: uppercase;
-  font-weight: 600; color: var(--accent-ink) !important; margin-bottom: 0.5rem !important;
+  font-weight: 600; color: var(--overlap) !important; margin-bottom: 0.5rem !important;
 }
 .card-next { background: transparent; border-style: dashed; }
 .soon { font-weight: 400; color: var(--ink-soft); }
@@ -109,14 +111,14 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
 .text-link { font-weight: 600; font-size: 0.95rem; }
 
 /* Footer */
-.site-footer { margin-top: 3rem; border-top: 1px solid var(--line); background: var(--sand-deep); }
+.site-footer { margin-top: 3rem; border-top: 1px solid var(--line); background: var(--bg-deep); }
 .footer-inner { padding-block: 3rem; display: grid; gap: 1rem; justify-items: start; font-size: 0.95rem; }
 .footer-inner p { margin: 0; }
 .gh { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 
 @media (max-width: 480px) {
   body { font-size: 1rem; }
-  .brand img { width: 180px; height: 32px; }
+  .brand img { width: 165px; height: 32px; }
   .site-header nav { gap: 1rem; }
   .card { padding: 1.5rem; }
 }

@@ -1,10 +1,12 @@
 # Provenance card: coastal-agentics.github.io
 
-**What it is:** The static company website for Coastal Agentics (Savannah, Georgia), to be served at https://coastal-agentics.github.io. It includes `index.html`, `style.css`, `404.html`, the original logo mark (`logo.svg`), the wordmark (`logo-wordmark.svg`) and `favicon.svg`.
+**What it is:** The static company website for Coastal Agentics (Savannah, Georgia), to be served at https://coastal-agentics.github.io. It includes `index.html`, `style.css`, `404.html`, the logo mark (`logo.svg`), the wordmark (`logo-wordmark.svg`), `favicon.svg` and the social card `og-image.png`.
+
+**Version:** 1.0.0 (first public release)
 
 **Made by:** Soundwave (CoS) with Grok Bot, for Nye Warburton.
 
-**Date:** 2026-09-30
+**Date:** 2026-09-30 (v1.0.0 published the same day)
 
 **Sources used:**
 - `manifesto.pdf`: *Coastal Agentics Manifesto*, Savannah, Georgia, September 2026. Used for the hero line, the "what we do" copy, beliefs, and the Saltmarsh description.
@@ -14,6 +16,15 @@
 
 **Deliberately excluded:** advisors, budgets, dollar figures, partner and client names, email addresses, and the manifesto's consulting and data-collection lines of business, because the stated product is education and demos.
 
-**Logo:** An original geometric mark with no third-party assets. Three variants were drawn and rendered, and variant A ("nested") was chosen.
+**Logo:** An original geometric mark with no third-party assets, fonts or templates. It is a solid C (#436A95) and a solid triangular A (#5F88B7) with a small notch for the A's counter. Where they overlap the tone is #34557B, and a hairline wave (1.2/64) is knocked out across both shapes. The geometry is exact: the C's outer diameter equals the A's height (44/64), so both share a baseline and cap line, and the A's left foot lands on the C's lowest point. `favicon.svg` drops the wave, which cannot be seen at 16 to 32px.
+
+It went through five rounds of iteration, all kept in `/workspace/coastal-site-logo-variants/` on the build box:
+1. v1: stroked C+A with an ochre wave crossbar, on the site until 1.0.0.
+2. v2: five interlocking stroke variants and a bold-palette study. The founder picked the "Hook".
+3. v3: Hook refined into tonal steel blues, with the wave behind the letters.
+4. v4: six solid-shape variants. The founder picked "Wave knockout".
+5. v5: five precise-intersection refinements. The founder picked #5 "Foot", which became the final mark.
+
+**Social card:** `og-image.png` (1200x630) was rendered in headless Chrome from `logo.svg` and the manifesto line.
 
 **License:** Not yet specified.

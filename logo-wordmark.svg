@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 64" width="360" height="64" role="img" aria-labelledby="t">
-  <title id="t">Coastal Agentics</title>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M50.58 15.27 A25 25 0 1 0 50.58 48.73" stroke="#1E3D36" stroke-width="6"/>
-    <path d="M21.5 47 L32 15 L42.5 47" stroke="#1E3D36" stroke-width="6"/>
-    <path d="M24.95 36.5 q3.52 -4.2 7.05 0 t7.05 0" stroke="#C8793A" stroke-width="4.2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 64" width="330" height="64" role="img" aria-labelledby="wm-t">
+  <title id="wm-t">Coastal Agentics</title>
+  <defs><clipPath id="wm-a"><path d="M43 10 L61 54 L47 54 L43 45 L39 54 L25 54 Z"/></clipPath><mask id="wm-w" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><rect width="64" height="64" fill="#fff"/><path d="M0 39 q3 -1.6 6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0 t6 0" fill="none" stroke="#000" stroke-width="1.2"/></mask></defs>
+  <g mask="url(#wm-w)">
+    <path d="M41.85 17.86 A22 22 0 1 0 41.85 46.14 L33.43 39.07 A11 11 0 1 1 33.43 24.93 Z" fill="#436A95"/>
+    <path d="M43 10 L61 54 L47 54 L43 45 L39 54 L25 54 Z" fill="#5F88B7"/>
+    <path d="M41.85 17.86 A22 22 0 1 0 41.85 46.14 L33.43 39.07 A11 11 0 1 1 33.43 24.93 Z" fill="#34557B" clip-path="url(#wm-a)"/>
   </g>
-  <text x="78" y="42" fill="#1E3D36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="0.2">Coastal Agentics</text>
+  <text x="74" y="42" fill="#34557B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="0.2">Coastal Agentics</text>
 </svg>
