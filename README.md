@@ -8,15 +8,18 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The whole site: hero, what we do, what we believe, Saltmarsh (research tool), projects (field experiments), work with us, footer |
+| `index.html` | The whole site: hero, what we do, what we believe, Saltmarsh (research tool), projects (field experiments), about, work with us, footer |
 | `style.css` | All styles. System fonts, no framework |
 | `logo.svg` | The mark: a solid C and a triangular A that overlap, with a hairline wave knocked out of both |
 | `logo-wordmark.svg` | The mark plus "Coastal Agentics" |
 | `favicon.svg` | The mark without the wave, cropped for 16 to 32px browser tabs |
 | `og-image.png` | 1200x630 social preview card |
+| `privacy.html` | Privacy page: no cookies, no trackers, no forms |
+| `terms.html` | Terms of use |
 | `404.html` | Not-found page. Self-contained (inline CSS and SVG) because Pages serves it at any missing path |
 | `.nojekyll` | Tells Pages to serve the files as-is |
 | `CARD.md` | Provenance card |
+| `LICENSE`, `ASSETS-LICENSE.md`, `TRADEMARKS.md`, `AUTHORS.md`, `CONTRIBUTING.md`, `REUSE.toml`, `LICENSES/` | Licensing, trademarks, authorship and contribution rules |
 
 ## Principles
 
@@ -24,6 +27,10 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 - Relative links throughout, so the site also works from a subpath or a local folder. The one exception is the home link on `404.html`, which points to `/`.
 - Palette (tonal grey-blue, from the logo): C `#436A95`, A `#5F88B7`, overlap `#34557B`, background `#EEF2F6`, text `#1F3147`.
 - Social meta tags (`og:*`, `twitter:*`) use absolute URLs, because crawlers require them.
+
+## License
+
+Code: MIT ([LICENSE](LICENSE)). Words, logos and art: all rights reserved ([ASSETS-LICENSE.md](ASSETS-LICENSE.md)). Names and logos: [TRADEMARKS.md](TRADEMARKS.md).
 
 ## Local preview
 

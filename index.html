@@ -34,6 +34,7 @@
       <a href="#beliefs">Beliefs</a>
       <a href="#saltmarsh">Saltmarsh</a>
       <a href="#projects">Projects</a>
+      <a href="#about">About</a>
       <a href="#work-with-us">Work with us</a>
     </nav>
   </header>
@@ -55,7 +56,7 @@
       <ul class="pillars">
         <li><strong>Research</strong> How decentralized agents learn in simulation, and how that behavior carries over to physical robots and edge devices.</li>
         <li><strong>Field work</strong> Experiments taken out of the lab and into real places, built alongside the people who know those places best.</li>
-        <li><strong>Open tools</strong> Everything we use is open, so the work can be checked, repeated and carried on by anyone.</li>
+        <li><strong>Open tools</strong> The tools we build are open source, so the work can be checked, repeated and carried on by anyone.</li>
       </ul>
     </section>
 
@@ -75,13 +76,14 @@
       <p class="eyebrow">Research tool</p>
       <h2>Saltmarsh</h2>
       <div class="prose">
-        <p>Saltmarsh is the open-source engine behind our research. It is not a new physics engine. It is a Python distribution that packages <strong>MuJoCo</strong>, <strong>Gymnasium</strong>, <strong>CleanRL</strong>, <strong>Stable-Baselines3</strong> and <strong>LeRobot</strong> into one install, so a newcomer can have an agent learning in an afternoon, and anyone can run everything without us.</p>
+        <p>Saltmarsh is the open-source Python library behind our research, for robot simulation, datasets, learned behavior and evaluation. It is not a new physics engine. It builds on established open projects, including <strong>MuJoCo</strong>, <strong>Gymnasium</strong>, <strong>Stable-Baselines3</strong> and <strong>LeRobot</strong>, as optional installs, and adds provenance records and safety checks around them. Those projects are made by their own teams; Saltmarsh is independent of them.</p>
+        <p>Saltmarsh is at an early stage (v0.1): the layout and safety checks are in place, and most parts are still stubs. It is licensed under Apache-2.0, so anyone can run it without us. <a href="https://github.com/Coastal-Agentics/saltmarsh">Source on GitHub</a>.</p>
       </div>
-      <ul class="stack" aria-label="Saltmarsh components">
+      <ul class="stack" aria-label="Projects Saltmarsh builds on">
         <li><span>MuJoCo</span> physics</li>
         <li><span>Gymnasium</span> environments</li>
-        <li><span>CleanRL</span> &amp; <span>SB3</span> reinforcement learning</li>
-        <li><span>LeRobot</span> robot data &amp; deployment</li>
+        <li><span>Stable-Baselines3</span> reinforcement learning</li>
+        <li><span>LeRobot</span> robot datasets &amp; policies</li>
       </ul>
     </section>
 
@@ -105,11 +107,17 @@
         </article>
       </div>
     </section>
+    <section id="about" class="section wrap">
+      <h2>About</h2>
+      <div class="prose">
+        <p>Coastal Agentics was started by Nye Warburton in Savannah, Georgia. He builds the simulations, the engine and the open tools on this site, with a team of software agents doing much of the day-to-day work in public on <a href="https://github.com/Coastal-Agentics">GitHub</a>.</p>
+      </div>
+    </section>
     <section id="work-with-us" class="section wrap">
       <h2>Work with us</h2>
       <div class="prose">
         <p>We work alongside organizations, communities and industry on how intelligent systems fit the places they serve, through research partnerships and field work.</p>
-        <p>If your organization is planning for robots or intelligent systems on the Georgia coast, we would like to hear from you. You can find us on <a href="https://github.com/Coastal-Agentics">GitHub</a>.</p>
+        <p>If your organization is planning for robots or intelligent systems on the Georgia coast, we would like to hear from you. Open an issue on <a href="https://github.com/Coastal-Agentics/coastal-agentics.github.io/issues">GitHub</a>.</p>
       </div>
     </section>
   </main>
@@ -121,8 +129,17 @@
       <p class="gh">
         <a href="https://github.com/Coastal-Agentics">GitHub: Coastal Agentics</a>
         <a href="https://github.com/starscream-agentics">GitHub: Starscream Agentics</a>
+        <a href="https://github.com/Coastal-Agentics/saltmarsh">Saltmarsh source</a>
         <a href="https://github.com/starscream-agentics/arena">Tank Arena source</a>
       </p>
+      <p class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="https://github.com/Coastal-Agentics/coastal-agentics.github.io/blob/main/TRADEMARKS.md">Trademarks</a>
+        <a href="https://github.com/Coastal-Agentics/coastal-agentics.github.io/issues">Contact</a>
+      </p>
+      <p class="legal-note">© 2026 Nye Warburton</p>
+      <p class="legal-note">Coastal Agentics™, Saltmarsh™ and Nyborg™ are trademarks of Nye Warburton. Starscream Agentics is an independent project and is not affiliated with, sponsored by or endorsed by any toy, film or game franchise. Other names belong to their owners.</p>
     </div>
   </footer>
 </body>

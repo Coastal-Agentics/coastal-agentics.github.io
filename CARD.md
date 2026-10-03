@@ -2,11 +2,11 @@
 
 **What it is:** The static company website for Coastal Agentics (Savannah, Georgia), to be served at https://coastal-agentics.github.io. It includes `index.html`, `style.css`, `404.html`, the logo mark (`logo.svg`), the wordmark (`logo-wordmark.svg`), `favicon.svg` and the social card `og-image.png`.
 
-**Version:** 1.2.0 (2026-09-30) simplifies the hero to "We train robots on the Georgia coast." with the line "Alongside the people and industries that will work with them.", keeps community as a light touch, and adds a "Work with us" section. 1.1.0 repositioned the copy toward culture and technology. 1.0.0 was the first public release.
+**Version:** 1.3.0 (2026-10-03) adds the license files, privacy and terms pages, a legal footer (© 2026 Nye Warburton, trademarks, privacy, terms, contact through GitHub) and a short About section. It also corrects the Saltmarsh copy to match the repository: a v0.1 library that builds on MuJoCo, Gymnasium, Stable-Baselines3 and LeRobot as optional installs, with a link to its source. 1.2.0 (2026-09-30) simplifies the hero to "We train robots on the Georgia coast." with the line "Alongside the people and industries that will work with them.", keeps community as a light touch, and adds a "Work with us" section. 1.1.0 repositioned the copy toward culture and technology. 1.0.0 was the first public release.
 
 **Made by:** Soundwave (CoS) with Grok Bot, for Nye Warburton.
 
-**Date:** 2026-09-30 (v1.0.0, v1.1.0 and v1.2.0 published the same day)
+**Date:** 2026-09-30 (v1.0.0, v1.1.0 and v1.2.0 published the same day); 2026-10-03 (v1.3.0)
 
 **Sources used:**
 - `manifesto.pdf`: *Coastal Agentics Manifesto*, Savannah, Georgia, September 2026. Used for "what we do" (the subject of agent behavior, the coastal Georgia mission), the openness, trust and safety beliefs, and the Saltmarsh description.
@@ -29,4 +29,4 @@ It went through five rounds of iteration, all kept in `/workspace/coastal-site-l
 
 **Social card:** `og-image.png` (1200x630) was rendered in headless Chrome from `logo.svg` and the site's hero line.
 
-**License:** Not yet specified.
+**License:** code (HTML structure, CSS) MIT; words, logo and images all rights reserved (ASSETS-LICENSE.md); names and logos per TRADEMARKS.md. The logo variants (v1 to v5) are not in this repository. They are archived outside it, on the build box at `/workspace/coastal-site-logo-variants/`.
