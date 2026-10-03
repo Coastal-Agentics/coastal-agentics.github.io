@@ -1,3 +1,5 @@
+/* SPDX-FileCopyrightText: 2026 Nye Warburton */
+/* SPDX-License-Identifier: MIT */
 /* Coastal Agentics: no build step, no framework, no trackers. */
 :root {
   --ink: #1F3147;        /* deep blue-grey text */
@@ -121,6 +123,8 @@ h3 { margin: 3rem 0 1.25rem; font-size: 1.2rem; }
 .site-footer { margin-top: 3rem; border-top: 1px solid var(--line); background: var(--bg-deep); }
 .footer-inner { padding-block: 3rem; display: grid; gap: 1rem; justify-items: start; font-size: 0.95rem; }
 .footer-inner p { margin: 0; }
+.site-footer .legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; }
+.site-footer .legal-note { margin: 0; font-size: 0.85rem; color: var(--ink-soft); max-width: 46rem; }
 .gh { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 
 @media (max-width: 480px) {
