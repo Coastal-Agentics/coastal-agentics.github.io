@@ -8,7 +8,7 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The whole site: hero, what we do, what we believe, Saltmarsh (research tool), projects (field experiments), work with us, footer |
+| `index.html` | The whole site: hero, what we do, what we believe, Saltmarsh (research tool), projects (Nyborgs, Arena, next experiment), work with us, footer |
 | `style.css` | All styles. System fonts, no framework |
 | `logo.svg` | The mark: a solid C and a triangular A that overlap, with a hairline wave knocked out of both |
 | `logo-wordmark.svg` | The mark plus "Coastal Agentics" |
@@ -21,7 +21,8 @@ Served by GitHub Pages at <https://coastal-agentics.github.io> from the root of 
 ## Principles
 
 - No build step, no framework, no trackers, no external requests except outbound links.
-- Relative links throughout, so the site also works from a subpath or a local folder. The one exception is the home link on `404.html`, which points to `/`.
+- Relative links for this site's own pages and assets, so it also works from a subpath or a local folder. The exceptions are the home link on `404.html` (`/`) and the links to the two project sites, which are root-relative: `/nyborgs/` ([Coastal-Agentics/nyborgs](https://github.com/Coastal-Agentics/nyborgs)) and `/arena/` ([Coastal-Agentics/arena](https://github.com/Coastal-Agentics/arena)). GitHub Pages serves both under this site's host, and they will follow it to its own domain.
+- The three sites share one header pattern (wordmark home, Nyborgs, Arena), the footer and these tokens, so they read as one business.
 - Palette (tonal grey-blue, from the logo): C `#436A95`, A `#5F88B7`, overlap `#34557B`, background `#EEF2F6`, text `#1F3147`.
 - Social meta tags (`og:*`, `twitter:*`) use absolute URLs, because crawlers require them.
 
