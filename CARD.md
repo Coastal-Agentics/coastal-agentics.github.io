@@ -12,7 +12,7 @@
 - `manifesto.pdf`: *Coastal Agentics Manifesto*, Savannah, Georgia, September 2026. Used for "what we do" (the subject of agent behavior, the coastal Georgia mission), the openness, trust and safety beliefs, and the Saltmarsh description.
 - `initial-idea-for-seth.pdf`: *Coastal Agentics: an initial idea, for discussion*, September 29, 2026. Background only. It confirms that Stable-Baselines3 is part of Saltmarsh and that Saltmarsh is a distribution, not a new physics engine. No other content from it appears on the site.
 - `charter-coastal-v1.md`: Coastal CoS charter summary, 2026-09-30. It confirms the next project, a Saltmarsh world (MuJoCo, walker or arm).
-- Facts supplied by Nye on 2026-09-30: founding date October 1, 2026; founder Nye Warburton; decentralized agent systems on edge devices; the Saltmarsh component list; Tank Arena URLs; Starscream Agentics as the simulations lab.
+- Facts supplied by Nye on 2026-09-30: founding date October 1, 2026; founder Nye Warburton; decentralized agent systems on edge devices; the Saltmarsh component list; Tank Arena URLs; the simulations lab name used at the time (since retired; the arena and Nyborgs repos moved into Coastal-Agentics on 2026-10-06).
 
 - Founder direction on positioning, 2026-09-30: a technical hero with community as a light touch, and safe, decentralized intelligence. The engagement model is described only as working alongside organizations, communities and industry through research partnerships and field work.
 
