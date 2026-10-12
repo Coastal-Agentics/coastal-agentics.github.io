@@ -52,6 +52,7 @@ h1 {
   font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.08;
   letter-spacing: -0.02em; font-weight: 700;
 }
+.mission { max-width: 38rem; margin: 1.25rem 0 0; font-size: clamp(1.15rem, 2.2vw, 1.4rem); line-height: 1.35; font-weight: 600; color: var(--ink); }
 .lede { max-width: 38rem; margin: 1.75rem 0 0; font-size: 1.2rem; color: var(--ink-soft); }
 .cta { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
 
