@@ -2,7 +2,7 @@
 
 **What it is:** The static company website for Coastal Agentics (Savannah, Georgia), to be served at https://coastal-agentics.github.io. It includes `index.html`, `style.css`, `404.html`, the logo mark (`logo.svg`), the wordmark (`logo-wordmark.svg`), `favicon.svg` and the social card `og-image.png`.
 
-**Version:** 1.2.0 (2026-09-30) simplifies the hero to "We train robots on the Georgia coast." with the line "Alongside the people and industries that will work with them.", keeps community as a light touch, and adds a "Work with us" section. 1.1.0 repositioned the copy toward culture and technology. 1.0.0 was the first public release.
+**Version:** 1.3.0 (2026-10-17) makes the share text generic for a compliance review: the meta, Open Graph and Twitter descriptions now describe agentic software development and behavioral design for agents, the social card (`og-image.png`) and its alt text carry "Good behavior, by design.", and the "Work with us" invite to organizations planning for robots is removed. Direction from Nye, 2026-10-17. 1.2.0 (2026-09-30) simplifies the hero to "We train robots on the Georgia coast." with the line "Alongside the people and industries that will work with them.", keeps community as a light touch, and adds a "Work with us" section. 1.1.0 repositioned the copy toward culture and technology. 1.0.0 was the first public release.
 
 **Made by:** Soundwave (CoS) with Grok Bot, for Nye Warburton.
 
