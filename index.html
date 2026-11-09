@@ -6,7 +6,8 @@
   <title>Coastal Agentics · Good behavior, by design</title>
   <meta name="description" content="Coastal Agentics designs and tests how AI agents act before they meet the world: agentic software development and behavioral design for agents, from Savannah, Georgia.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#EEF2F6">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://coastal-agentics.github.io/">
   <!-- Social cards: crawlers require absolute URLs here -->
   <meta property="og:type" content="website">
@@ -22,104 +23,178 @@
   <meta name="twitter:title" content="Coastal Agentics · Good behavior, by design">
   <meta name="twitter:description" content="Coastal Agentics designs and tests how AI agents act before they meet the world: agentic software development and behavioral design for agents, from Savannah, Georgia.">
   <meta name="twitter:image" content="https://coastal-agentics.github.io/og-image.png">
+  <link rel="preload" as="image" href="media/warehouse-poster.jpg">
   <link rel="stylesheet" href="style.css">
-  <script src="flock.js" defer></script>
+  <script src="home.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header wrap">
     <a class="brand" href="./" aria-label="Coastal Agentics home">
-      <img src="logo-wordmark.svg" alt="Coastal Agentics" width="206" height="40">
+      <img src="logo.svg" alt="" aria-hidden="true" width="64" height="64">
+      <span class="brand-name">Coastal Agentics</span>
     </a>
     <nav aria-label="Primary">
-      <a href="#what-we-do">What we do</a>
-      <a href="#beliefs">Beliefs</a>
-      <a href="#saltmarsh">Saltmarsh</a>
-      <a href="#projects">Projects</a>
-      <a href="/nyborgs/">Nyborgs</a>
-      <a href="/arena/">Arena</a>
+      <a href="#approach">Approach</a>
+      <a href="#work">Work</a>
+      <a href="#principles">Principles</a>
       <a href="#work-with-us">Work with us</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero wrap">
-      <p class="eyebrow">Savannah, Georgia</p>
-      <h1>Good behavior, by design.</h1>
-      <p class="mission">Make coastal Georgia the place where agent behavior gets designed, tested and trusted.</p>
-      <p class="lede">We design and test how AI agents act before they meet the world.</p>
-      <p class="cta"><a class="button" href="#work-with-us">Work with us</a> <a class="text-link" href="/nyborgs/">Meet the Nyborgs</a> <a class="text-link" href="/arena/arena.html">Watch the Tank Arena</a></p>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="tagline">
+      <p class="hero-kicker">
+        <span>Behavioral design for agents</span>
+        <span>Savannah, Georgia</span>
+      </p>
+      <div class="hero-grid">
+        <h1 id="tagline"><span class="line">Good behavior,</span> <span class="line">by design.</span></h1>
+        <div class="hero-aside">
+          <p>We design and test how AI agents act before they meet the world.</p>
+          <p class="mission">Make coastal Georgia the place where agent behavior gets designed, tested and trusted.</p>
+          <a class="text-link" href="#work">Explore the work <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <!-- Warehouse clip: concept visualization only. It is not evidence of autonomous navigation. -->
+      <figure class="hero-film">
+        <div class="film-frame">
+          <video
+            id="warehouse-video"
+            data-coastal-video
+            data-title="warehouse concept visualization"
+            muted
+            loop
+            playsinline
+            preload="none"
+            poster="media/warehouse-poster.jpg"
+            controls
+            aria-label="Simulation. Warehouse concept visualization. Not a demonstration of autonomous navigation.">
+            <source src="media/warehouse.mp4" type="video/mp4">
+            A concept visualization of a warehouse. Not a demonstration of autonomous navigation.
+          </video>
+          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <button class="video-toggle" type="button">
+            <span data-label>Play</span>
+          </button>
+        </div>
+        <figcaption class="caption">
+          <span>Warehouse concept visualization</span>
+          <span>Not a demonstration of autonomous navigation.</span>
+        </figcaption>
+      </figure>
     </section>
 
-    <section id="what-we-do" class="section wrap">
-      <h2>What we do</h2>
-      <div class="prose">
+    <section id="approach" class="section wrap">
+      <p class="section-kicker">What we do</p>
+      <h2><span class="line">Intelligence is one thing.</span> <span class="line">How it acts is another.</span></h2>
+      <div class="split prose">
         <p>Our subject is the behavior of intelligent agents: how they learn, what they optimize for, and how they act once they are out in the world.</p>
-        <p>Robots will arrive across coastal Georgia over the next decade: at the port, in manufacturing, in logistics and in entertainment. The intelligence that runs them will be shaped somewhere, by someone. We want a meaningful share of it shaped here, by people who live here, with tools anyone can inspect.</p>
+        <p>The intelligence that runs within public systems will be shaped somewhere, by someone. We want a meaningful share of it shaped here, by people who live here, with tools anyone can inspect.</p>
       </div>
-      <ul class="pillars">
-        <li><strong>Research</strong> How decentralized agents learn in simulation, and how that behavior carries over to physical robots and edge devices.</li>
-        <li><strong>Field work</strong> Experiments taken out of the lab and into real places, built alongside the people who know those places best.</li>
-        <li><strong>Open tools</strong> Everything we use is open, so the work can be checked, repeated and carried on by anyone.</li>
-      </ul>
+      <div class="pillars">
+        <article>
+          <p class="num" aria-hidden="true">01</p>
+          <h3>Research</h3>
+          <p>How decentralized agents learn in simulation, and how that behavior carries over to software and edge devices.</p>
+        </article>
+        <article>
+          <p class="num" aria-hidden="true">02</p>
+          <h3>Field work</h3>
+          <p>Experiments taken out of the lab and into real places, built alongside the people who know those places best.</p>
+        </article>
+        <article>
+          <p class="num" aria-hidden="true">03</p>
+          <h3>Open tools</h3>
+          <p>Everything we use is open, so the work can be checked, repeated and carried on by anyone.</p>
+        </article>
+      </div>
     </section>
 
-    <section id="beliefs" class="section wrap">
-      <h2>What we believe</h2>
+    <section id="work" class="section wrap">
+      <p class="section-kicker">Selected work</p>
+      <div class="section-head">
+        <h2><span class="line">A space to test.</span> <span class="line">A way to understand.</span></h2>
+        <p>Making behavior visible, beginning with simulated environments.</p>
+      </div>
+      <div class="work-grid">
+        <!-- Spot clip: MuJoCo playback of a pretrained SLM-Lab policy. Coastal Agentics did not train it. -->
+        <figure class="film">
+          <div class="film-frame">
+            <video
+              id="spot-video"
+              data-coastal-video
+              data-title="Spot simulation"
+              muted
+              loop
+              playsinline
+              preload="none"
+              poster="media/spot-poster.jpg"
+              controls
+              aria-label="Simulation. A pretrained SLM-Lab walking policy in MuJoCo. Coastal Agentics did not train this policy.">
+              <source src="media/spot.mp4" type="video/mp4">
+              A MuJoCo simulation of a pretrained SLM-Lab walking policy. Coastal Agentics did not train this policy.
+            </video>
+            <p class="film-badge" aria-hidden="true">Simulation</p>
+            <button class="video-toggle" type="button">
+              <span data-label>Play</span>
+            </button>
+          </div>
+        </figure>
+        <div class="study-copy">
+          <h3>Movement, made observable.</h3>
+          <p>A MuJoCo simulation of a walking policy, shown so the movement can be watched. Coastal Agentics did not train this policy.</p>
+          <p class="credit">MuJoCo · pretrained SLM-Lab policy</p>
+        </div>
+        <article class="future-panel" id="future-projects" aria-labelledby="future-title">
+          <p class="num" aria-hidden="true">For later</p>
+          <div class="future-copy">
+            <h3 id="future-title">Future projects</h3>
+            <p>Selected work will be added here when it is ready to show.</p>
+          </div>
+          <!-- Add a project here only when it is real: a name, a short description, and a real link. -->
+          <p class="future-note">Nothing is listed yet.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="principles" class="section wrap">
+      <p class="section-kicker">What we believe</p>
+      <div class="section-head">
+        <h2><span class="line">The future should have</span> <span class="line">a local point of view.</span></h2>
+        <p class="principles-intro">Built with people. Grounded in place. Open enough to earn trust.</p>
+      </div>
       <ul class="beliefs">
-        <li><strong>People.</strong> Those who work alongside a robot should have a say in how it behaves.</li>
-        <li><strong>Place.</strong> Systems belong close to where they run, shaped by people who know that place.</li>
-        <li><strong>Openness.</strong> Our tools and methods are open. Reward functions are published, because they determine what an agent does.</li>
-        <li><strong>Trust.</strong> Every dataset records who made it. Anyone who works with us can leave with everything.</li>
-        <li><strong>Safety.</strong> Monitoring and constraints are in place before an agent runs.</li>
-        <li><strong>Decentralization.</strong> We favor many small agents on edge devices, close to the people they serve, over one distant system.</li>
+        <li>
+          <h3><span class="num" aria-hidden="true">01</span> People</h3>
+          <p>Those who work alongside an agent should have a say in how it behaves.</p>
+        </li>
+        <li>
+          <h3><span class="num" aria-hidden="true">02</span> Place</h3>
+          <p>Systems belong close to where they run, shaped by people who know that place.</p>
+        </li>
+        <li>
+          <h3><span class="num" aria-hidden="true">03</span> Openness</h3>
+          <p>Our tools and methods are open. Reward functions are published, because they determine what an agent does.</p>
+        </li>
+        <li>
+          <h3><span class="num" aria-hidden="true">04</span> Trust</h3>
+          <p>Every dataset records who made it. Anyone who works with us can leave with everything.</p>
+        </li>
+        <li>
+          <h3><span class="num" aria-hidden="true">05</span> Safety</h3>
+          <p>Monitoring and constraints are in place before an agent runs.</p>
+        </li>
+        <li>
+          <h3><span class="num" aria-hidden="true">06</span> Decentralization</h3>
+          <p>We favor many small agents on edge devices, close to the people they serve, over one distant system.</p>
+        </li>
       </ul>
     </section>
 
-    <section id="saltmarsh" class="section wrap">
-      <p class="eyebrow">Research tool</p>
-      <h2>Saltmarsh</h2>
-      <div class="prose">
-        <p>Saltmarsh is the open-source engine behind our research. It is not a new physics engine. It is a Python distribution that packages <strong>MuJoCo</strong>, <strong>Gymnasium</strong>, <strong>CleanRL</strong>, <strong>Stable-Baselines3</strong> and <strong>LeRobot</strong> into one install, so a newcomer can have an agent learning in an afternoon, and anyone can run everything without us.</p>
-      </div>
-      <ul class="stack" aria-label="Saltmarsh components">
-        <li><span>MuJoCo</span> physics</li>
-        <li><span>Gymnasium</span> environments</li>
-        <li><span>CleanRL</span> &amp; <span>SB3</span> reinforcement learning</li>
-        <li><span>LeRobot</span> robot data &amp; deployment</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="section wrap">
-      <p class="eyebrow">Field experiments</p>
-      <h2>Projects</h2>
-      <div class="cards">
-        <article class="card" id="nyborgs">
-          <p class="card-tag">Agents</p>
-          <h3>Nyborgs</h3>
-          <p>Our customizable agents: round cream heads, dot eyes and chunky yarn hair. Every Nyborg gets the same point budget, and cosmetics never affect stats. One Nyborg can train in any arena: tank and racing today, more later.</p>
-          <p class="links">
-            <a class="button" href="/nyborgs/">Meet the Nyborgs</a>
-          </p>
-        </article>
-        <article class="card" id="arena">
-          <p class="card-tag">Live</p>
-          <h3>Arena</h3>
-          <p>Our first field experiment: live simulations where Nyborgs learn to play, Tank Arena and Nyborg kart racing. Our own deterministic Rust engine, compiled to WebAssembly, running in your browser.</p>
-          <p class="links">
-            <a class="button" href="/arena/arena.html">Watch the Tank Arena</a>
-            <a class="text-link" href="/arena/arena.html?game=racing">Watch Nyborgs race</a>
-            <a class="text-link" href="https://github.com/Coastal-Agentics/arena">Source on GitHub</a>
-          </p>
-        </article>
-        <article class="card card-next">
-          <p class="card-tag">Next</p>
-          <h3>Saltmarsh world <span class="soon">(coming)</span></h3>
-          <p>The next experiment: a MuJoCo world built on Saltmarsh, with a walker or an arm.</p>
-        </article>
-      </div>
-    </section>
-    <section id="work-with-us" class="section wrap">
-      <h2>Work with us</h2>
+    <section id="work-with-us" class="section wrap closer">
+      <h2><span class="line">Better behavior.</span> <span class="line">Shared possibility.</span></h2>
       <div class="prose">
         <p>We work alongside organizations, communities and industry on how intelligent systems fit the places they serve, through research partnerships and field work.</p>
         <p>You can find us on <a href="https://github.com/Coastal-Agentics">GitHub</a>.</p>
@@ -129,15 +204,18 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <img src="logo.svg" alt="" width="36" height="36">
-      <p>Behavioral design for agents · Savannah, Georgia · Founded October 1, 2026</p>
-      <p class="gh">
-        <a href="./">Coastal Agentics</a>
-        <a href="/nyborgs/">Nyborgs</a>
-        <a href="/arena/">Arena</a>
-        <a href="https://github.com/Coastal-Agentics">GitHub: Coastal Agentics</a>
-        <a href="https://github.com/Coastal-Agentics/arena">Arena source</a>
-      </p>
+      <div class="footer-brand">
+        <img src="logo.svg" alt="" aria-hidden="true" width="40" height="40">
+        <div>
+          <a class="footer-name" href="./">Coastal Agentics</a>
+          <p>Behavioral design for agents</p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>Savannah, Georgia</p>
+        <p>Founded October 1, 2026</p>
+        <p><a href="https://github.com/Coastal-Agentics">GitHub</a></p>
+      </div>
     </div>
   </footer>
 </body>
