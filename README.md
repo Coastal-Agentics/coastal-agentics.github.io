@@ -34,10 +34,10 @@ flowchart LR
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The homepage: brand and tagline, warehouse concept film, what we do, Spot simulation and Future projects, what we believe, work with us, Savannah footer |
+| `index.html` | The homepage: brand and tagline, warehouse concept film, what we do, TBD concept animation and Future projects, what we believe, work with us, Savannah footer |
 | `style.css` | All styles. System fonts, no framework |
 | `home.js` | Play and pause for the two films. Pauses off-screen. No autoplay for reduced motion, narrow screens, or Save-Data |
-| `media/` | Warehouse and Spot films and their posters. See [Homepage media](#homepage-media) |
+| `media/` | Warehouse and TBD films and their posters. See [Homepage media](#homepage-media) |
 | `logo.svg` | The mark: a solid C and a triangular A that overlap, with a hairline wave knocked out of both |
 | `logo-wordmark.svg` | The mark plus "Coastal Agentics" |
 | `favicon.svg` | The mark without the wave, cropped for 16 to 32px browser tabs |
@@ -72,10 +72,11 @@ Copied unchanged from the supplied homepage package. No audio tracks.
 | --- | --- | --- |
 | `media/warehouse.mp4` | Concept visualization of a warehouse aisle. Visible label: Simulation. | H.264, 1600×900, 24 fps, 12.0 s, 3,273,989 bytes. Not a demonstration of autonomous navigation. |
 | `media/warehouse-poster.jpg` | Poster shown before playback and when motion is reduced. | JPEG, 1600×900, 78,015 bytes. |
-| `media/spot.mp4` | MuJoCo view of a walking policy. | H.264, 1200×676, 24 fps, 7.0 s, 806,093 bytes. Pretrained SLM-Lab policy. Not trained by Coastal Agentics. |
-| `media/spot-poster.jpg` | Poster for the Spot film. | JPEG, 1200×676, 31,829 bytes. |
+| `media/tbd-stair-hop.mp4` | Concept animation of the working-name TBD robot flying to the top of a staircase. | H.264, 1280×720, 30 fps, 24.5 s. Keyframed in Blender, not a physics simulation. |
+| `media/tbd-stair-hop-poster.jpg` | Poster for the TBD film. | JPEG, 1280×720. |
+| `media/spot.mp4`, `media/spot-poster.jpg` | Previous Spot film (MuJoCo, pretrained SLM-Lab policy), no longer on the homepage. | Kept for reference. |
 
-The visible credit under the Spot film is `MuJoCo · pretrained SLM-Lab policy`.
+The visible credit under the TBD film is `Concept animation · working name TBD`.
 
 ## Editing
 
