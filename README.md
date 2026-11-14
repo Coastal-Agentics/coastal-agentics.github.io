@@ -34,10 +34,10 @@ flowchart LR
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The homepage: brand and tagline, warehouse concept film, what we do, TBD concept animation and Future projects, what we believe, work with us, Savannah footer |
+| `index.html` | The homepage: brand and tagline, warehouse concept film, what we do, TBD concept animation, a still and Play the sim button for the playable TBD physics sim, Future projects, what we believe, work with us, Savannah footer |
 | `style.css` | All styles. System fonts, no framework |
 | `home.js` | Play and pause for the two films. Pauses off-screen. No autoplay for reduced motion, narrow screens, or Save-Data |
-| `media/` | Warehouse and TBD films and their posters. See [Homepage media](#homepage-media) |
+| `media/` | Warehouse and TBD films and their posters, plus the TBD sim still. See [Homepage media](#homepage-media) |
 | `logo.svg` | The mark: a solid C and a triangular A that overlap, with a hairline wave knocked out of both |
 | `logo-wordmark.svg` | The mark plus "Coastal Agentics" |
 | `favicon.svg` | The mark without the wave, cropped for 16 to 32px browser tabs |
@@ -50,8 +50,8 @@ flowchart LR
 ## Principles
 
 - No build step, no framework, no trackers, no external requests except outbound links.
-- Relative links for this site's own pages and assets, so it also works from a subpath or a local folder. The home link on `404.html` stays root-relative (`/`), because Pages serves that file at any missing path. The homepage itself does not link to `/nyborgs/` or `/arena/`.
-- Nyborgs and Arena stay in their own repositories and are not featured or linked on this homepage. The Future projects slot is empty on purpose: no named projects and no placeholder links. Saltmarsh stays described in the repo map above and is not a homepage section in this layout.
+- Relative links for this site's own pages and assets, so it also works from a subpath or a local folder. The home link on `404.html` stays root-relative (`/`), because Pages serves that file at any missing path. The one Arena link on the homepage is the TBD sim invite, which uses the absolute URL `https://coastal-agentics.github.io/arena/tbd/`. The homepage still does not link to `/nyborgs/`.
+- Nyborgs stays in its own repository and is not featured or linked on this homepage. After the TBD concept animation, the homepage links to the playable TBD physics sim in the Arena site. The Future projects slot is empty on purpose: no named projects and no placeholder links. Saltmarsh stays described in the repo map above and is not a homepage section in this layout.
 - Palette (tonal grey-blue, from the logo): C `#436A95`, A `#5F88B7`, overlap `#34557B`, page `#FFFFFF`, text `#1F3147`, footer `#34557B`.
 - Social meta tags (`og:*`, `twitter:*`) use absolute URLs, because crawlers require them.
 
@@ -74,9 +74,10 @@ Copied unchanged from the supplied homepage package. No audio tracks.
 | `media/warehouse-poster.jpg` | Poster shown before playback and when motion is reduced. | JPEG, 1600×900, 78,015 bytes. |
 | `media/tbd-stair-hop.mp4` | Concept animation of the working-name TBD robot flying to the top of a staircase. | H.264, 1280×720, 30 fps, 24.5 s. Keyframed in Blender, not a physics simulation. |
 | `media/tbd-stair-hop-poster.jpg` | Poster for the TBD film. | JPEG, 1280×720. |
+| `media/tbd-sim.jpg` | Still of the playable TBD physics sim, shown under the concept animation with a Play the sim button. | JPEG, 1600×900, 91,773 bytes. Captured from the live sim at https://coastal-agentics.github.io/arena/tbd/ with the help panel hidden and the status panel collapsed. Estimated parameters, not measured. |
 | `media/spot.mp4`, `media/spot-poster.jpg` | Previous Spot film (MuJoCo, pretrained SLM-Lab policy), no longer on the homepage. | Kept for reference. |
 
-The visible credit under the TBD film is `Concept animation · working name TBD`.
+The visible credit under the TBD film is `Concept animation · working name TBD`. The line under the sim still is `Fly TBD in a browser physics sim (estimated parameters).`
 
 ## Editing
 
