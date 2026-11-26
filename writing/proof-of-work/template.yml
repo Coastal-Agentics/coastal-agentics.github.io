@@ -1,0 +1,45 @@
+# Proof of Work entry template.
+# Copy to entries/NNN.yml (next number, zero-padded to three digits),
+# fill every field, then from this directory run:
+#   python3 render.py
+# That rebuilds the post page, the series landing page, both RSS feeds,
+# and the Writing index. Newest entries are listed first. Do not invent
+# numbers; copy them from the results files. Leave unused clip ids out.
+
+number: 0                      # integer, used in the title as "Proof of Work #N"
+slug: short-hyphenated-title   # used in the filename: {number}-{slug}.html
+title: "A short, direct headline, without the series prefix"
+date: YYYY-MM-DD               # America/New_York date of the write-up
+author: Coastal Agentics
+robot_or_system:               # what was tested
+  - 
+mode: simulation               # simulation | real
+control:                       # one or more of: pretrained | scripted | trained
+  - 
+worked: |
+  One or two sentences. Only recorded results.
+failed: |
+  One or two sentences. Only recorded results.
+next: |
+  The next concrete step.
+lede: |
+  Opening paragraph, in plain language. Say if this is a draft.
+  Mention that clips are simulations when they are.
+sections:
+  - heading: Section title
+    body: |
+      Paragraphs, separated by a blank line.
+    clips:                     # optional; ids must exist in `clips` below
+      - clip-id
+clips:
+  - id: clip-id
+    title: Short name
+    src: ../../media/sim/file-stem    # stem; renderer adds .mp4, .webm, .jpg
+    kind: pretrained           # pretrained | scripted | mixed | trained
+    label: "Simulation. …"     # aria-label and honest on-page line
+    credit: "Credit: …"
+sources:                       # provenance for the numbers
+  - path: /workspace/unitree-biped-tests/results.json
+    label: "A public-facing line for the sources block on the page."
+    note: "Private note for the routine: which fields were copied."
+draft: true                    # true until Nye approves publishing

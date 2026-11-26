@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proof of Work #1: The walks held. The table work did not.</title>
+  <meta name="description" content="This week we ran walking and hand tests in MuJoCo. Pretrained walking policies on Unitree&#x27;s G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A two-finger gripper stacked a three-block tower in seven of ten tries. A full G1 at a table, using a scripted arm and its own hand, stacked none of eight towers and poured none of five cups. Every clip on this page is a simulation.">
+  <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://coastal-agentics.github.io/writing/proof-of-work/1-the-walks-held.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Coastal Agentics">
+  <meta property="og:title" content="Proof of Work #1: The walks held. The table work did not.">
+  <meta property="og:description" content="This week we ran walking and hand tests in MuJoCo. Pretrained walking policies on Unitree&#x27;s G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A two-finger gripper stacked a three-block tower in seven of ten tries. A full G1 at a table, using a scripted arm and its own hand, stacked none of eight towers and poured none of five cups. Every clip on this page is a simulation.">
+  <meta property="og:url" content="https://coastal-agentics.github.io/writing/proof-of-work/1-the-walks-held.html">
+  <meta property="og:image" content="https://coastal-agentics.github.io/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Proof of Work #1: The walks held. The table work did not.">
+  <meta name="twitter:description" content="This week we ran walking and hand tests in MuJoCo. Pretrained walking policies on Unitree&#x27;s G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A two-finger gripper stacked a three-block tower in seven of ten tries. A full G1 at a table, using a scripted arm and its own hand, stacked none of eight towers and poured none of five cups. Every clip on this page is a simulation.">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="alternate" type="application/rss+xml" title="Coastal Agentics: Proof of Work" href="feed.xml">
+  <script src="../../home.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="../../" aria-label="Coastal Agentics home">
+      <img src="../../logo.svg" alt="" aria-hidden="true" width="64" height="64">
+      <span class="brand-name">Coastal Agentics</span>
+    </a>
+    <nav aria-label="Primary">
+      <a href="../../#approach">Approach</a>
+      <a href="../../#work">Work</a>
+      <a href="../../#principles">Principles</a>
+      <a href="../../writing/" aria-current="page">Writing</a>
+      <a href="../../videos/">Videos</a>
+      <a href="../../#work-with-us">Work with us</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <article class="article">
+      <a class="back-link" href="./">← Proof of Work</a>
+      <p class="post-meta">Proof of Work #1 · 26 November 2026 · Coastal Agentics · Simulation · pretrained, scripted</p>
+      <h1>Proof of Work #1: The walks held. The table work did not.</h1>
+      <p class="lede">This week we ran walking and hand tests in MuJoCo. Pretrained walking policies on Unitree&#x27;s G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A two-finger gripper stacked a three-block tower in seven of ten tries. A full G1 at a table, using a scripted arm and its own hand, stacked none of eight towers and poured none of five cups. Every clip on this page is a simulation.</p>
+      <div class="facts">
+        <div>
+          <h2>What worked</h2>
+          <p>Pretrained walking policies on Unitree G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A scripted Robotiq 2F-85 stacked a full three-block tower in 7 of 10 tries. A pretrained LEAP Hand policy kept a cube in its palm in all 15 tries.</p>
+        </div>
+        <div>
+          <h2>What failed</h2>
+          <p>After a retune, the Dex3 hand lifted a cube and a sphere but not a cylinder, failed a pinch, and stacked a full tower in 0 of 10 tries. The Inspire hand stayed stable and still lifted nothing. A scripted G1 at a table stacked 0 of 8 towers and poured 0 of 5 cups.</p>
+        </div>
+        <div>
+          <h2>Next step</h2>
+          <p>Collision-aware arm planning, then a training plan.</p>
+        </div>
+      </div>
+      <figure class="film">
+        <div class="film-frame">
+          <video
+            data-coastal-video
+            muted
+            playsinline
+            preload="none"
+            poster="../../media/sim/coastal-sim-sizzle.jpg"
+            controls
+            aria-label="Simulation. Highlight of walking, recovery, stacking, and in-hand tests. Not field work.">
+            <source src="../../media/sim/coastal-sim-sizzle.webm" type="video/webm">
+            <source src="../../media/sim/coastal-sim-sizzle.mp4" type="video/mp4">
+            Simulation. Highlight of walking, recovery, stacking, and in-hand tests. Not field work.
+          </video>
+          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <button class="video-toggle" type="button"><span data-label>Play</span></button>
+        </div>
+        <h2>Highlight</h2>
+        <p class="credit">A 36-second cut of the four branded clips below, in that order. Simulation only.</p>
+      </figure>
+      <h2>Walking</h2>
+      <p>We ran five tests on each of four setups: stand, walk at a 0.5 m/s forward command, turn, side-step, and a sideways shove during a walk. That is 20 trials. None of the robots fell.</p>
+      <p>On Unitree&#x27;s own walking policies, mean forward speed at that 0.5 m/s command was 0.490 m/s for H1-2, 0.477 m/s for G1, and 0.466 m/s for H1. Those three policies control the legs only, with the upper body held.</p>
+      <p>A separate G1 policy from MuJoCo Playground moves the whole body, arms included, and also stayed up through the shove. It is looser on the command: it drifted 1.07 m when told to stand still, walked at 0.597 m/s when asked for 0.5 m/s, and when asked to step sideways at 0.3 m/s, mean sideways speed was 0.079 m/s.</p>
+      <figure class="film">
+        <div class="film-frame">
+          <video
+            data-coastal-video
+            muted
+            playsinline
+            preload="none"
+            poster="../../media/sim/g1-walk.jpg"
+            controls
+            aria-label="Simulation. Pretrained walking policy.">
+            <source src="../../media/sim/g1-walk.webm" type="video/webm">
+            <source src="../../media/sim/g1-walk.mp4" type="video/mp4">
+            Simulation. Pretrained walking policy.
+          </video>
+          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <button class="video-toggle" type="button"><span data-label>Play</span></button>
+        </div>
+        <h2>Walk</h2>
+        <p class="credit">Simulation · MuJoCo · Unitree G1 · pretrained walking policy (MuJoCo Playground). Coastal Agentics did not train this policy.</p>
+      </figure>
+      <figure class="film">
+        <div class="film-frame">
+          <video
+            data-coastal-video
+            muted
+            playsinline
+            preload="none"
+            poster="../../media/sim/h1-2-push.jpg"
+            controls
+            aria-label="Simulation. Pretrained walking policy, recovery after a shove.">
+            <source src="../../media/sim/h1-2-push.webm" type="video/webm">
+            <source src="../../media/sim/h1-2-push.mp4" type="video/mp4">
+            Simulation. Pretrained walking policy, recovery after a shove.
+          </video>
+          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <button class="video-toggle" type="button"><span data-label>Play</span></button>
+        </div>
+        <h2>Recovery</h2>
+        <p class="credit">Simulation · MuJoCo · Unitree H1-2 · pretrained walking policy (Unitree rl_gym). Legs only; the upper body is held. The shove is at three seconds. Coastal Agentics did not train this policy.</p>
+      </figure>
+      <h2>Hands and grippers</h2>
+      <p>The scripted Robotiq 2F-85 lifted a cube, a cylinder, and a sphere without slipping, and stacked a full three-block tower in 7 of 10 tries. It stacked at least two blocks in 9 of 10.</p>
+      <p>After we retuned the Unitree Dex3 hand, a scripted grasp lifted a cube and a sphere. A cylinder lift and a pinch both failed. Stacking a three-block tower was 0 of 10; one try placed a single block. The Inspire hand on the H1-2, also retuned so the simulation stayed stable, recorded no successful lifts and stacked 0 of 10.</p>
+      <p>The only published grasping policy we ran was DeepMind&#x27;s LEAP Hand reorientation controller. It kept the cube in the palm in 15 of 15 tries and reached the target angle in 4 of 15. The success line is an orientation error under 0.5 rad, about 29 degrees. Mean final error was 58.4 degrees. It never dropped the cube.</p>
+      <figure class="film">
+        <div class="film-frame">
+          <video
+            data-coastal-video
+            muted
+            playsinline
+            preload="none"
+            poster="../../media/sim/robotiq-stack.jpg"
+            controls
+            aria-label="Simulation. Scripted grasp and stack, not a learned policy.">
+            <source src="../../media/sim/robotiq-stack.webm" type="video/webm">
+            <source src="../../media/sim/robotiq-stack.mp4" type="video/mp4">
+            Simulation. Scripted grasp and stack, not a learned policy.
+          </video>
+          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <button class="video-toggle" type="button"><span data-label>Play</span></button>
+        </div>
+        <h2>Stacking</h2>
+        <p class="credit">Simulation · MuJoCo · Robotiq 2F-85 · scripted grasp. Not a learned policy. Model from Google DeepMind MuJoCo Menagerie.</p>
+      </figure>
+      <figure class="film">
+        <div class="film-frame">
+          <video
+            data-coastal-video
+            muted
+            playsinline
+            preload="none"
+            poster="../../media/sim/leap-reorient.jpg"
+            controls
+            aria-label="Simulation. Pretrained in-hand policy.">
+            <source src="../../media/sim/leap-reorient.webm" type="video/webm">
+            <source src="../../media/sim/leap-reorient.mp4" type="video/mp4">
+            Simulation. Pretrained in-hand policy.
+          </video>
+          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <button class="video-toggle" type="button"><span data-label>Play</span></button>
+        </div>
+        <h2>In hand</h2>
+        <p class="credit">Simulation · MuJoCo · LEAP Hand · pretrained in-hand policy (MuJoCo Playground). Coastal Agentics did not train this policy.</p>
+      </figure>
+      <h2>A G1 at a table</h2>
+      <p>We then put a Unitree G1 with its Dex3 hand at a table. The pelvis was welded at the official stand height, 0.793 m. The legs, waist, and left arm were held at the stand pose. The right arm was driven with a scripted inverse-kinematics reach, not a learned policy. Liquid was faked with 16 small spheres.</p>
+      <p>Scripted stacking was 0 of 8. Every trial dropped all three blocks. Scripted pouring was 0 of 5: the cup was never held, and no spheres were transferred. The results file does not record a geometric cause. In the stills, the right hand sits at the near edge of the table, short of a clean grasp. We did not brand those failed clips for the site.</p>
+      <p>The next step is collision-aware arm planning, then a training plan. There is no public pretrained pick-and-place or pouring policy in the set we ran.</p>
+      <div class="sources">
+        <p>Numbers on this page were copied from the test results, not rounded beyond the figures stated.</p>
+        <p>Walking figures come from the 25 November 2026 tests in MuJoCo 3.17. Mean speeds are the recorded forward speed on the 0.5 m/s walk trial. The Playground stand drift is the recorded forward displacement on the stand trial.</p>
+        <p>Hand, gripper, and table figures come from tests through 26 November 2026. Dex3, Inspire, and table figures are from the retuned (v2) records. Robotiq stacking and LEAP reorientation are from the first results list. LEAP success is in-hand and an orientation error under 0.5 rad, about 29 degrees.</p>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <img src="../../logo.svg" alt="" aria-hidden="true" width="40" height="40">
+        <div>
+          <a class="footer-name" href="../../">Coastal Agentics</a>
+          <p>Behavioral design for agents</p>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <p>Savannah, Georgia</p>
+        <p>Founded October 1, 2026</p>
+        <p><a href="https://github.com/Coastal-Agentics">GitHub</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
