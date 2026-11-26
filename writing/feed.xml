@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Coastal Agentics Writing</title>
+    <link>https://coastal-agentics.github.io/writing/</link>
+    <description>Notes from Coastal Agentics in Savannah, Georgia.</description>
+    <language>en-us</language>
+    <item>
+      <title>Proof of Work #1: The walks held. The table work did not.</title>
+      <link>https://coastal-agentics.github.io/writing/proof-of-work/1-the-walks-held.html</link>
+      <guid>https://coastal-agentics.github.io/writing/proof-of-work/1-the-walks-held.html</guid>
+      <pubDate>Thu, 26 Nov 2026 18:00:00 -0500</pubDate>
+      <author>Coastal Agentics</author>
+      <description>This week we ran walking and hand tests in MuJoCo. Pretrained walking policies on Unitree&#x27;s G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A two-finger gripper stacked a three-block tower in seven of ten tries. A full G1 at a table, using a scripted arm and its own hand, stacked none of eight towers and poured none of five cups. Every clip on this page is a simulation.</description>
+    </item>
+  </channel>
+</rss>

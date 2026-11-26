@@ -82,3 +82,21 @@ The visible credit under the TBD film is `Concept animation · working name TBD`
 ## Editing
 
 Edit `index.html` directly. Keep the copy faithful to the Coastal Agentics manifesto, and update `CARD.md` when the sources change.
+
+
+## Writing and Videos
+
+The site includes a Writing section and a series, **Coastal Agentics: Proof of Work**, plus a Videos page for branded simulation clips.
+
+| Path | Purpose |
+| --- | --- |
+| `writing/index.html` | Writing home, with a card for the series |
+| `writing/feed.xml` | RSS for all writing posts |
+| `writing/proof-of-work/` | Series landing page, numbered entries, and a series-only feed |
+| `writing/proof-of-work/README.md` | How to add the next entry |
+| `writing/proof-of-work/template.yml` | Frontmatter fields for a new post |
+| `writing/proof-of-work/render.py` | Rebuilds the HTML and feeds from `entries/*.yml` |
+| `videos/index.html` | Simulation clips, labeled as pretrained or scripted |
+| `media/sim/` | Web-sized branded clips used on Videos and in Proof of Work posts |
+
+See `writing/proof-of-work/README.md` for the steps to add a post. These pages are staged on GitHub Pages first; they are not copied to coastalagentics.com until that is approved.

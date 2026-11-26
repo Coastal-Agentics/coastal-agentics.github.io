@@ -1,0 +1,94 @@
+number: 1
+slug: the-walks-held
+title: "The walks held. The table work did not."
+date: 2026-11-26
+author: Coastal Agentics
+robot_or_system:
+  - Unitree G1
+  - Unitree H1
+  - Unitree H1-2
+  - Robotiq 2F-85
+  - Unitree Dex3-1
+  - Inspire hand
+  - LEAP Hand
+mode: simulation
+control:
+  - pretrained
+  - scripted
+worked: |
+  Pretrained walking policies on Unitree G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A scripted Robotiq 2F-85 stacked a full three-block tower in 7 of 10 tries. A pretrained LEAP Hand policy kept a cube in its palm in all 15 tries.
+failed: |
+  After a retune, the Dex3 hand lifted a cube and a sphere but not a cylinder, failed a pinch, and stacked a full tower in 0 of 10 tries. The Inspire hand stayed stable and still lifted nothing. A scripted G1 at a table stacked 0 of 8 towers and poured 0 of 5 cups.
+next: |
+  Collision-aware arm planning, then a training plan.
+lede: |
+  This week we ran walking and hand tests in MuJoCo. Pretrained walking policies on Unitree's G1, H1, and H1-2 stayed up on flat ground and recovered from a shove. A two-finger gripper stacked a three-block tower in seven of ten tries. A full G1 at a table, using a scripted arm and its own hand, stacked none of eight towers and poured none of five cups. Every clip on this page is a simulation.
+sections:
+  - heading: Walking
+    body: |
+      We ran five tests on each of four setups: stand, walk at a 0.5 m/s forward command, turn, side-step, and a sideways shove during a walk. That is 20 trials. None of the robots fell.
+
+      On Unitree's own walking policies, mean forward speed at that 0.5 m/s command was 0.490 m/s for H1-2, 0.477 m/s for G1, and 0.466 m/s for H1. Those three policies control the legs only, with the upper body held.
+
+      A separate G1 policy from MuJoCo Playground moves the whole body, arms included, and also stayed up through the shove. It is looser on the command: it drifted 1.07 m when told to stand still, walked at 0.597 m/s when asked for 0.5 m/s, and when asked to step sideways at 0.3 m/s, mean sideways speed was 0.079 m/s.
+    clips:
+      - g1-walk
+      - h1-2-push
+  - heading: Hands and grippers
+    body: |
+      The scripted Robotiq 2F-85 lifted a cube, a cylinder, and a sphere without slipping, and stacked a full three-block tower in 7 of 10 tries. It stacked at least two blocks in 9 of 10.
+
+      After we retuned the Unitree Dex3 hand, a scripted grasp lifted a cube and a sphere. A cylinder lift and a pinch both failed. Stacking a three-block tower was 0 of 10; one try placed a single block. The Inspire hand on the H1-2, also retuned so the simulation stayed stable, recorded no successful lifts and stacked 0 of 10.
+
+      The only published grasping policy we ran was DeepMind's LEAP Hand reorientation controller. It kept the cube in the palm in 15 of 15 tries and reached the target angle in 4 of 15. The success line is an orientation error under 0.5 rad, about 29 degrees. Mean final error was 58.4 degrees. It never dropped the cube.
+    clips:
+      - robotiq-stack
+      - leap-reorient
+  - heading: A G1 at a table
+    body: |
+      We then put a Unitree G1 with its Dex3 hand at a table. The pelvis was welded at the official stand height, 0.793 m. The legs, waist, and left arm were held at the stand pose. The right arm was driven with a scripted inverse-kinematics reach, not a learned policy. Liquid was faked with 16 small spheres.
+
+      Scripted stacking was 0 of 8. Every trial dropped all three blocks. Scripted pouring was 0 of 5: the cup was never held, and no spheres were transferred. The results file does not record a geometric cause. In the stills, the right hand sits at the near edge of the table, short of a clean grasp. We did not brand those failed clips for the site.
+
+      The next step is collision-aware arm planning, then a training plan. There is no public pretrained pick-and-place or pouring policy in the set we ran.
+    clips: []
+clips:
+  - id: coastal-sim-sizzle
+    title: Highlight
+    src: ../../media/sim/coastal-sim-sizzle
+    kind: mixed
+    label: "Simulation. Highlight of walking, recovery, stacking, and in-hand tests. Not field work."
+    credit: "A 36-second cut of the four branded clips below, in that order. Simulation only."
+    hero: true
+  - id: g1-walk
+    title: Walk
+    src: ../../media/sim/g1-walk
+    kind: pretrained
+    label: "Simulation. Pretrained walking policy."
+    credit: "Simulation · MuJoCo · Unitree G1 · pretrained walking policy (MuJoCo Playground). Coastal Agentics did not train this policy."
+  - id: h1-2-push
+    title: Recovery
+    src: ../../media/sim/h1-2-push
+    kind: pretrained
+    label: "Simulation. Pretrained walking policy, recovery after a shove."
+    credit: "Simulation · MuJoCo · Unitree H1-2 · pretrained walking policy (Unitree rl_gym). Legs only; the upper body is held. The shove is at three seconds. Coastal Agentics did not train this policy."
+  - id: robotiq-stack
+    title: Stacking
+    src: ../../media/sim/robotiq-stack
+    kind: scripted
+    label: "Simulation. Scripted grasp and stack, not a learned policy."
+    credit: "Simulation · MuJoCo · Robotiq 2F-85 · scripted grasp. Not a learned policy. Model from Google DeepMind MuJoCo Menagerie."
+  - id: leap-reorient
+    title: In hand
+    src: ../../media/sim/leap-reorient
+    kind: pretrained
+    label: "Simulation. Pretrained in-hand policy."
+    credit: "Simulation · MuJoCo · LEAP Hand · pretrained in-hand policy (MuJoCo Playground). Coastal Agentics did not train this policy."
+sources:
+  - path: /workspace/unitree-biped-tests/results.json
+    label: "Walking figures come from the 25 November 2026 tests in MuJoCo 3.17. Mean speeds are the recorded forward speed on the 0.5 m/s walk trial. The Playground stand drift is the recorded forward displacement on the stand trial."
+    note: "mean_vx_mps on the walk trial at command [0.5, 0.0, 0.0]; Playground stand drift is dx_m on the stand trial."
+  - path: /workspace/unitree-grasp-tests/results.json
+    label: "Hand, gripper, and table figures come from tests through 26 November 2026. Dex3, Inspire, and table figures are from the retuned (v2) records. Robotiq stacking and LEAP reorientation are from the first results list. LEAP success is in-hand and an orientation error under 0.5 rad, about 29 degrees."
+    note: "Dex3, Inspire, and table figures from results_v2 and g1_table; Robotiq stacking and LEAP from the first results list."
+draft: false
