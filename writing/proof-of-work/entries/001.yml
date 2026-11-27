@@ -3,6 +3,8 @@ slug: the-walks-held
 title: "The walks held. The table work did not."
 date: 2026-11-26
 author: Coastal Agentics
+# Homepage 'Latest from Proof of Work' still (640x360, small on purpose). Optional; defaults to the first clip's poster.
+still: ../../media/pow/1-the-walks-held.jpg
 robot_or_system:
   - Unitree G1
   - Unitree H1

@@ -16,7 +16,7 @@ These pages are first staged on GitHub Pages (`coastal-agentics.github.io`). The
    python3 render.py
    ```
 
-   That rebuilds the post page, this series index, both RSS feeds, and `/writing/index.html`.
+   That rebuilds the post page, this series index, both RSS feeds, `/writing/index.html`, and the "Latest from Proof of Work" strip on the homepage (between the `pow-latest` markers in `/index.html`). The strip uses the entry's optional `still` field, or the poster of its first clip.
 6. Preview locally (`python3 -m http.server` from the site root). Leave `draft: true` until the post is approved. Draft entries get a note on the post page and are left out of the public indexes and feeds. Do not open a pull request or copy files to the public site unless asked.
 
 ## Fields
