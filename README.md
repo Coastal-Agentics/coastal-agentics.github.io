@@ -34,7 +34,7 @@ flowchart LR
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | The homepage: brand and tagline, warehouse concept film, what we do, TBD concept animation, a still and Play the sim button for the playable TBD physics sim, Future projects, what we believe, work with us, Savannah footer |
+| `index.html` | The homepage: brand and tagline, demo reel (muted loop), what we do, TBD concept animation, a still and Play the sim button for the playable TBD physics sim, Future projects, what we believe, work with us, Savannah footer |
 | `style.css` | All styles. System fonts, no framework |
 | `home.js` | Play and pause for the two films. Pauses off-screen. No autoplay for reduced motion, narrow screens, or Save-Data |
 | `media/` | Warehouse and TBD films and their posters, plus the TBD sim still. See [Homepage media](#homepage-media) |
@@ -70,7 +70,10 @@ Copied unchanged from the supplied homepage package. No audio tracks.
 
 | File | Role | Provenance |
 | --- | --- | --- |
-| `media/warehouse.mp4` | Concept visualization of a warehouse aisle. Visible label: Simulation. | H.264, 1600×900, 24 fps, 12.0 s, 3,273,989 bytes. Not a demonstration of autonomous navigation. |
+| `media/reel/coastal-reel-hero.mp4`, `.webm` | Homepage hero: demo reel v5, muted loop. Every shot labeled (simulation: trained / pretrained / scripted, or concept animation). | 1280×720, 30 fps, 58.1 s; H.264 High 4.0 ~6.5 MB, VP9 ~6.3 MB. Autoplays on desktop only, poster on phones, reduced motion and Save-Data (home.js). |
+| `media/reel/coastal-reel.mp4` | Full demo reel with music, on Videos (`videos/#reel`). | 1280×720, H.264 High 4.0 + AAC 128k, faststart, ~5.6 MB. Music: Cloud Mechanics, QubeSounds (Pixabay Content License). |
+| `media/reel/coastal-reel-poster.jpg` | Reel poster (trained waypoint run, beam step). | JPEG, 1280×720. |
+| `media/warehouse.mp4` | Concept visualization of a warehouse aisle. Visible label: Simulation. | H.264, 1600×900, 24 fps, 12.0 s, 3,273,989 bytes. Not a demonstration of autonomous navigation. No longer on the homepage (replaced by the demo reel, 2026-11-27); kept for reference. |
 | `media/warehouse-poster.jpg` | Poster shown before playback and when motion is reduced. | JPEG, 1600×900, 78,015 bytes. |
 | `media/tbd-stair-hop.mp4` | Concept animation of the working-name TBD robot flying to the top of a staircase. | H.264, 1280×720, 30 fps, 24.5 s. Keyframed in Blender, not a physics simulation. |
 | `media/tbd-stair-hop-poster.jpg` | Poster for the TBD film. | JPEG, 1280×720. |
