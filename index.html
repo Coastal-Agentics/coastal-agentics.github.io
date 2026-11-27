@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Coastal Agentics · Good behavior, by design">
   <meta name="twitter:description" content="Coastal Agentics designs and tests how AI agents act before they meet the world: agentic software development and behavioral design for agents, from Savannah, Georgia.">
   <meta name="twitter:image" content="https://coastal-agentics.github.io/og-image.png">
-  <link rel="preload" as="image" href="media/warehouse-poster.jpg">
+  <link rel="preload" as="image" href="media/reel/coastal-reel-poster.jpg">
   <link rel="stylesheet" href="style.css">
   <script src="home.js" defer></script>
 </head>
@@ -59,31 +59,32 @@
         </div>
       </div>
 
-      <!-- Warehouse clip: concept visualization only. It is not evidence of autonomous navigation. -->
+      <!-- Demo reel (v5, 58 s): muted loop. Every shot carries an on-screen label: simulation (trained, pretrained or scripted) or concept animation. -->
       <figure class="hero-film">
         <div class="film-frame">
           <video
-            id="warehouse-video"
+            id="reel-video"
             data-coastal-video
-            data-title="warehouse concept visualization"
+            data-title="demo reel"
             muted
             loop
             playsinline
             preload="none"
-            poster="media/warehouse-poster.jpg"
+            poster="media/reel/coastal-reel-poster.jpg"
             controls
-            aria-label="Simulation. Warehouse concept visualization. Not a demonstration of autonomous navigation.">
-            <source src="media/warehouse.mp4" type="video/mp4">
-            A concept visualization of a warehouse. Not a demonstration of autonomous navigation.
+            aria-label="Demo reel. Simulation and concept animation, each shot labeled on screen: trained waypoint navigation, pretrained walking, scripted grasping and stacking, and the TBD concept robot.">
+            <source src="media/reel/coastal-reel-hero.webm" type="video/webm">
+            <source src="media/reel/coastal-reel-hero.mp4" type="video/mp4">
+            Demo reel. Simulation and concept animation, each shot labeled on screen.
           </video>
-          <p class="film-badge" aria-hidden="true">Simulation</p>
+          <p class="film-badge" aria-hidden="true">Demo reel</p>
           <button class="video-toggle" type="button">
             <span data-label>Play</span>
           </button>
         </div>
         <figcaption class="caption">
-          <span>Warehouse concept visualization</span>
-          <span>Not a demonstration of autonomous navigation.</span>
+          <span>Simulation and concept animation, labeled on every shot.</span>
+          <a class="text-link" href="videos/#reel">Watch the reel with sound <span aria-hidden="true">→</span></a>
         </figcaption>
       </figure>
     </section>
