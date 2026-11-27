@@ -3,6 +3,12 @@
  * and it stays off for reduced motion, reduced data, and Save-Data.
  * A clip pauses off-screen so a phone does not keep decoding it.
  * Remove the script tag and the videos fall back to native controls.
+ * A video with data-sound-src (the homepage demo reel) also gets Sound on:
+ * it swaps to the with-music file, restarts from 0 with native controls,
+ * and a second click swaps back to the silent loop at the same moment.
+ * Play on a phone starts the with-music file too. Videos this script does
+ * not manage (the reel on Videos) are never muted; when one plays, the
+ * managed clips pause and ambient autoplay waits until it stops.
  */
 (function () {
   'use strict';
@@ -14,6 +20,7 @@
   var narrow = window.matchMedia('(max-width: 899px)');
   var reducedData = window.matchMedia('(prefers-reduced-data: reduce)');
   var ratios = {};
+  var externalPlaying = false;
 
   videos.forEach(function (video) {
     var frame = video.closest('.film-frame');
@@ -25,15 +32,101 @@
     video.addEventListener('pause', function () { label(video); });
     var button = frame && frame.querySelector('.video-toggle');
     if (button) button.addEventListener('click', function () { toggle(video); });
+    var soundButton = frame && frame.querySelector('.sound-toggle');
+    if (soundButton && video.getAttribute('data-sound-src')) {
+      soundButton.addEventListener('click', function () {
+        if (video.dataset.sound === 'on') soundOff(video);
+        else soundOn(video, true);
+      });
+    }
     label(video);
   });
+
+  // Unmanaged videos (for example the full reel on Videos) keep their sound.
+  Array.prototype.slice.call(document.querySelectorAll('video:not([data-coastal-video])')).forEach(function (ext) {
+    ext.addEventListener('play', function () {
+      externalPlaying = true;
+      videos.forEach(pause);
+    });
+    function done() { externalPlaying = false; sync(); }
+    ext.addEventListener('pause', done);
+    ext.addEventListener('ended', done);
+  });
+
+  function soundLabel(video) {
+    var frame = video.closest('.film-frame');
+    var b = frame && frame.querySelector('.sound-toggle');
+    var on = video.dataset.sound === 'on';
+    if (frame) frame.classList.toggle('is-sound', on);
+    if (!b) return;
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.setAttribute('aria-label', on ? 'Sound off: back to the silent loop' : 'Sound on: play the demo reel from the start with music');
+    var t = b.querySelector('[data-sound-label]');
+    if (t) t.textContent = on ? 'Sound off' : 'Sound on';
+  }
+
+  function swapSource(video, src) {
+    if (!video.dataset.loopSources) video.dataset.loopSources = video.innerHTML;
+    Array.prototype.slice.call(video.querySelectorAll('source')).forEach(function (s) { s.remove(); });
+    if (src) {
+      video.src = src;
+    } else {
+      video.removeAttribute('src');
+      video.innerHTML = video.dataset.loopSources;
+    }
+    video.load();
+  }
+
+  function seekWhenReady(video, t) {
+    if (!t) return;
+    function go() { try { video.currentTime = Math.min(t, (video.duration || t) - 0.1); } catch (e) {} }
+    if (video.readyState >= 1) go();
+    else video.addEventListener('loadedmetadata', go, { once: true });
+  }
+
+  // Called from a click, so play() with sound is allowed (phones included).
+  function soundOn(video, fromStart) {
+    var t = fromStart ? 0 : video.currentTime;
+    video.dataset.sound = 'on';
+    swapSource(video, video.getAttribute('data-sound-src'));
+    video.loop = false;
+    video.muted = false;
+    video.volume = 1;
+    video.controls = true;
+    seekWhenReady(video, t);
+    soundLabel(video);
+    delete video.dataset.userPaused;
+    video.dataset.userPlayed = 'true';
+    videos.forEach(function (other) {
+      if (other !== video) { pause(other); delete other.dataset.userPlayed; }
+    });
+    var pending = video.play();
+    if (pending && pending.catch) pending.catch(function () { label(video); });
+  }
+
+  function soundOff(video) {
+    var t = video.currentTime;
+    var wasPlaying = !video.paused;
+    delete video.dataset.sound;
+    video.muted = true;
+    video.controls = false;
+    video.loop = true;
+    swapSource(video, null);
+    seekWhenReady(video, t);
+    soundLabel(video);
+    label(video);
+    if (wasPlaying) {
+      var pending = video.play();
+      if (pending && pending.catch) pending.catch(function () { label(video); });
+    }
+  }
 
   function savesData() {
     return !!(navigator.connection && navigator.connection.saveData);
   }
 
   function autoplayAllowed() {
-    return !reduce.matches && !narrow.matches && !reducedData.matches && !savesData();
+    return !externalPlaying && !reduce.matches && !narrow.matches && !reducedData.matches && !savesData();
   }
 
   function label(video) {
@@ -62,6 +155,10 @@
   }
 
   function toggle(video) {
+    if (video.paused && video.getAttribute('data-sound-src') && video.dataset.sound !== 'on') {
+      soundOn(video, false);
+      return;
+    }
     if (video.paused) {
       delete video.dataset.userPaused;
       video.dataset.userPlayed = 'true';
@@ -94,8 +191,10 @@
       if (video.dataset.userPlayed && !video.dataset.userPaused && ratio >= 0.35) pinned = video;
     });
 
-    var allowAmbient = autoplayAllowed();
+    var soundPlaying = videos.some(function (v) { return v.dataset.sound === 'on' && !v.paused; });
+    var allowAmbient = autoplayAllowed() && !soundPlaying;
     videos.forEach(function (video) {
+      if (video.dataset.sound === 'on') return; // the visitor chose sound; native controls own it now
       var ratio = ratios[video.id] || 0;
       var should = video === pinned || (!pinned && allowAmbient && video === best && !video.dataset.userPaused);
       if (should) start(video);
