@@ -11,6 +11,8 @@ slug: short-hyphenated-title   # used in the filename: {number}-{slug}.html
 title: "A short, direct headline, without the series prefix"
 date: YYYY-MM-DD               # America/New_York date of the write-up
 author: Coastal Agentics
+# Optional: homepage strip still, 640x360 JPEG under media/pow/. Defaults to the first clip's poster.
+# still: ../../media/pow/NNN-slug.jpg
 robot_or_system:               # what was tested
   - 
 mode: simulation               # simulation | real

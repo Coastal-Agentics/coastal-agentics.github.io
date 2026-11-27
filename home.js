@@ -6,7 +6,8 @@
  * A video with data-sound-src (the homepage demo reel) also gets Sound on:
  * it swaps to the with-music file, restarts from 0 with native controls,
  * and a second click swaps back to the silent loop at the same moment.
- * Play on a phone starts the with-music file too. Videos this script does
+ * Play on a phone starts the with-music file too. The hero's Watch with sound
+ * button (data-sound-cta) does the same as Sound on. Videos this script does
  * not manage (the reel on Videos) are never muted; when one plays, the
  * managed clips pause and ambient autoplay waits until it stops.
  */
@@ -40,6 +41,39 @@
       });
     }
     label(video);
+  });
+
+  // Silent loop range: data-loop-start / data-loop-end (seconds) keep the muted
+  // hero loop on the action shots, skipping the opening title card and end card.
+  // The with-music reel (Sound on) still plays from 0 with its cards.
+  videos.forEach(function (video) {
+    var from = parseFloat(video.getAttribute('data-loop-start'));
+    var to = parseFloat(video.getAttribute('data-loop-end'));
+    if (!(from > 0)) return;
+    function silent() { return video.dataset.sound !== 'on'; }
+    function jump() { try { video.currentTime = from; } catch (e) {} }
+    video.addEventListener('loadedmetadata', function () {
+      if (silent() && video.currentTime < from) jump();
+    });
+    video.addEventListener('timeupdate', function () {
+      if (!silent()) return;
+      var t = video.currentTime;
+      if (t < from - 0.25 || (to > from && t >= to)) jump();
+    });
+  });
+
+  // Hero button "Watch with sound": same as Sound on, then bring the reel into view.
+  Array.prototype.slice.call(document.querySelectorAll('[data-sound-cta]')).forEach(function (cta) {
+    var target = document.getElementById(cta.getAttribute('data-sound-cta'));
+    if (!target || !target.getAttribute('data-sound-src')) return;
+    cta.addEventListener('click', function (event) {
+      event.preventDefault();
+      soundOn(target, true);
+      var frame = target.closest('.film-frame') || target;
+      frame.scrollIntoView({ behavior: reduce.matches ? 'auto' : 'smooth', block: 'center' });
+      var sound = frame.querySelector('.sound-toggle');
+      if (sound) sound.focus({ preventScroll: true });
+    });
   });
 
   // Unmanaged videos (for example the full reel on Videos) keep their sound.
